@@ -13,3 +13,7 @@
     flex-direction: column;
     align-items: stretch;
 }
+
+.row{
+    display: flex;
+}
