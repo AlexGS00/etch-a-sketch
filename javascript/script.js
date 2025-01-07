@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("button").addEventListener("click", event => {
         let newSize = document.querySelector("input").value;
-        (newSize <= 100) ? generateNewCanvas(newSize) 
-        : document.querySelector("#warning").textContent = "Maximum size is 100";
-        document.querySelector("input").value = 0;
+        if(newSize <= 100){
+            generateNewCanvas(newSize);
+            document.querySelector("#warning").textContent = "";
+        } else{
+            document.querySelector("#warning").textContent = "Maximum size is 100";
+        }
     })
     generateNewCanvas(16)
 })
