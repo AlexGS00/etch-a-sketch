@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("MORR")
+    document.querySelector("button").addEventListener("click", event => {
+        let newSize = document.querySelector("input").value;
+        (newSize <= 100) ? generateNewCanvas(newSize) 
+        : document.querySelector("#warning").textContent = "Maximum size is 100";
+        document.querySelector("input").value = 0;
+    })
     generateNewCanvas(16)
 })
 
@@ -33,9 +38,12 @@ function generateNewCanvas(size){
 }
 
 function randomColor(){
-    return Math.floor(Math.random * 256);
+    return Math.floor(Math.random() * 256);
 }
 
-function changeColor(){
-
+function changeColor(event){
+    let square = event.target;
+    let newSquareOpacity = parseFloat(square.style.opacity);
+    newSquareOpacity += 0.1;
+    square.style.opacity = newSquareOpacity;
 }
