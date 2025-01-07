@@ -16,7 +16,7 @@ function generateNewCanvas(size){
             let col = document.createElement("div");
 
             col.classList.add("col");
-            col.style.backgroundColor = rgb(randomColor, randomColor, randomColor);
+            col.style.backgroundColor = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
             col.style.opacity = 0;
 
             col.addEventListener("mouseover", changeColor)
@@ -28,4 +28,8 @@ function generateNewCanvas(size){
     canvas.remove()
 
     document.querySelector(".container").appendChild(newCanvas)
+}
+
+function randomColor(){
+    return Math.floor(Math.random * 256);
 }
