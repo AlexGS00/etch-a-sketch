@@ -20,6 +20,8 @@ function generateNewCanvas(size){
             col.style.opacity = 0;
 
             col.addEventListener("mouseover", changeColor)
+
+            row.appendChild(col);
         }
         newCanvas.appendChild(row);
     }
@@ -32,4 +34,8 @@ function generateNewCanvas(size){
 
 function randomColor(){
     return Math.floor(Math.random * 256);
+}
+
+function changeColor(){
+
 }
